@@ -1,15 +1,14 @@
 # SQL_ALCHEMY_Flask_Challenge
 
-### Preliminary Steps:
+### STEP 1: Preliminary Steps:
 
-1. This Piruz Alemi Respository uses Python and SQLAlchemy to do basic climate analysis and data exploration of 
-   climate database. All of the following analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+1. This Piruz Alemi Respository uses Python and SQLAlchemy to do basic climate analysis and data exploration of  climate database. All of the following analysis was completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
    
-2. I Used SQLAlchemy to `create_engine` to connect to an (my) sqlite database.
+2. I Used SQLAlchemy to `create_engine` to connect to an sqlite database.
 3. I also Used SQLAlchemy `automap_base()` to reflect my tables into classes and saved
-   a reference to those classes called `Station` and `Measurement`.
+   a reference to those classes called `Station` and `Measurement`, for easy access.
 
-### Precipitation Analysis
+### STEP 2: Precipitation Analysis
 
 * I Designed a query to retrieve the last 12 months of precipitation data.
 
@@ -25,7 +24,7 @@
 
 * Used Pandas to print the summary statistics for the precipitation data.
 
-### Station Analysis
+### STEP 3: Station Analysis
 
 * Designed a query to calculate the total number of stations.
 * Designed a query to find the most active stations.
@@ -34,12 +33,12 @@
   * I used functions such as `func.min`, `func.max`, `func.avg`, and `func.count` in my queries.
   * Designed a query to retrieve the last 12 months of temperature observation data (tobs).
   * Filtered by the station with the highest number of observations.
-  * Plot the results as a histogram with `bins=12`. See:
+  * Plotted the results as a histogram with `bins=12`. See:
     ![station-histogram](Alemi/Images/station-histogram.png)
 
 - - -
 
-## Step 2 - Climate App
+## Step 4 - Climate App
 
 Once I completed my initial analysis, I designed a Flask API based on the queries that I have just developed.
 * Most Importantly ! I Used FLASK to create my routes for the latter querris.
@@ -60,14 +59,15 @@ Once I completed my initial analysis, I designed a Flask API based on the querie
 * `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
   * Return a JSON list of the minimum temperature, the average temperature, and the max temperature 
   *                                                for a given start or start-end range.
-  * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date.
-  * When given the start and the end date, calculated the `TMIN`, `TAVG`, and `TMAX` for dates between the start 
-     and end date inclusive.
+  * When given the start only, I calculated `TMIN`, `TAVG`, and `TMAX` for all dates greater 
+  * than and equal to the start date.
+  * When given the start and the end date, calculated the `TMIN`, `TAVG`, and `TMAX` for
+  * dates between the start  and end date inclusive.
 
-## Solutions:
+## STEP 5: Solutions:
 
 * I joined the station and measurement tables for some of the analysis queries.
-* I Used Flask to  `jsonify` to convert your API data into a valid JSON response object.
+* I Used Flask to  `jsonify` to convert MY API data into a valid JSON response object.
 
 Thank you. Piruz Alemi Jan 8th, 2020
 
